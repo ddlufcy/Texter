@@ -96,16 +96,16 @@ const joinedStrings = new Map();
 function addToMap() {
     const inputBoxes = document.querySelectorAll('.joinerInputBox')
     inputBoxes.forEach(inputBox => {
-        let key = inputBox.placeholder
-        let value = inputBox.value
-        joinedStrings.set(key, value)
+        let key = inputBox.placeholder;
+        let value = inputBox.value;
+        joinedStrings.set(key, value);
         // console.log(inputBox.placeholder)
         // console.log(inputBox.value)
-        console.log(joinedStrings)
-        let h3 = document.createElement('h3')
-        h3.id = key
-        h3.textContent = value
-        joinedText.appendChild(h3)
+        console.log(joinedStrings);
+        let h3 = document.createElement('h3');
+        h3.id = key;
+        h3.textContent = value;
+        joinedText.appendChild(h3);
     })
 };
 
