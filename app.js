@@ -53,7 +53,6 @@ addNewInput.addEventListener("click", (e) => {
 
 });
 
-
 //remove all input boxes
 function clearAllJoinerFields(fields){
     while(fields.firstChild) {
@@ -110,7 +109,7 @@ function addToMap() {
     })
 };
 
-//take text values and display
+//take text values and display from map
 function displayValues(){
     console.log(joinerOutput)
 };
