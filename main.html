@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Filter</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <H1>TEXT FILTER</H1>
+    <div id="mainForm">
+        <form class="formTextInput">
+            <input type="text" name="firstInput" id="input1" placeholder="Enter Text">  
+            <button id="input1Button" type="submit">FIX</button>           
+            <button type="reset" id="reset1" class="reset">X</button>
+            <input type="checkbox" name="UpperCase" id="upperCase">  
+            <label for="upperCase">Upper Case</label>   
+            <!--<<input type="checkbox" name="spaceRemove" id="spaceRemove">  
+            <label for="spaceRemove">Remove Spaces</label> -->
+        <h3 id="input1Text" class="outputText"></h3>
+        </form>
+        <form class="formTextInput">
+            <input type="text" name="secondInput" id="input2" placeholder="Enter Text">  
+            <button id="input2Button" type="submit">FIX</button>
+            <button type="reset" id="reset2">X</button>           
+        <h3 id="input2Text"></h3>
+        </form>     
+    </div>
+    <h1>Text Joiner</h1>
+    <div>
+        <form class="joiner">
+            <button id="addFieldBtn" type="submit">Add Field</button> 
+            <button id="removeAllJoinerTextBtn" type="button">Clear Text</button> 
+            <button id="resetJoinerBtn" type="button">Remove All</button>  
+            <button id="joinerShowBtn" type="button">Join Text</button>        
+        </form>
+        <div id="joinerTextOutput"></div>
+        <div id="joinedText"></div>
+    </div>
+<script src="app.js"></script>    
+</body>
+</html>

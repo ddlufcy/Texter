@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.outputText {
+    line-height: 1;
+    padding: 0;
+    margin: 1rem;
+}
+
+:focus {
+
+        border-width: 3px;
+        border-style: outset;
+        border-color: blue;
+}
+
+.joinerInputBox {
+    margin: 4px;
+}
+
+#joinedText h3 {
+    display: inline;
+    padding-left: 5pt;
+}
