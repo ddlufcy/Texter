@@ -22,5 +22,6 @@ body {
 
 #joinedText h3 {
     display: inline;
-    padding-left: 5pt;
+    margin-top: 5pt;
+    /* padding-left: 5pt; */
 }

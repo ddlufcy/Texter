@@ -41,7 +41,7 @@ const joinerTextRemove = document.getElementById("removeAllJoinerTextBtn");
 addNewInput.addEventListener("click", (e) => {
     e.preventDefault();
     let inputNumber = [];
-    let count = joinerOutput.childNodes.length //number of text input boxes
+    let count = joinerOutput.childNodes.length //number of text input boxes on the screen
     inputNumber.push(count)
     count++
     // console.log("input ", inputNumber)
