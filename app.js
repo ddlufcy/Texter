@@ -113,3 +113,40 @@ function addToMap() {
 function displayValues(){
     console.log(joinerOutput)
 };
+
+/////list compare
+let list1Values = document.getElementById("list1");
+let listOne = [];
+
+let list2Values = document.getElementById("list2");
+let listTwo = [];
+
+//grab values from text area
+function getListValues(list) {
+    const textValues = list.value;
+    const values = textValues.split(',').map(val => val.trim())
+    list === list1Values ? listOne.push(values) : listTwo.push(values)  
+    // console.log("1",listOne)
+    // console.log("2",listTwo)
+}
+
+//get first textarea values
+getListValues(list1Values)
+//get second textarea values
+getListValues(list2Values)
+
+//iterate through lists to compare
+
+function listCompare(first, second){
+    console.log(first)
+    console.log(second)
+    let matches = first.reduce((acc, value) => {
+        if (second.includes(value)) {
+            acc.push(value)
+        }
+        return acc;
+    }, []);
+    console.log(matches)
+}
+
+listCompare(listOne, listTwo);

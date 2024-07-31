@@ -24,3 +24,13 @@ body {
     display: inline;
     padding-left: 5pt;
 }
+
+.list-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-container h4 {
+    display: contents;
+}
+
