@@ -138,15 +138,19 @@ getListValues(list2Values)
 //iterate through lists to compare
 
 function listCompare(first, second){
-    console.log(first)
-    console.log(second)
-    let matches = first.reduce((acc, value) => {
-        if (second.includes(value)) {
-            acc.push(value)
-        }
-        return acc;
-    }, []);
-    console.log(matches)
+    const arr1 = [...first[0]]
+    const arr2 = [...second[0]]
+    console.log(arr1)
+    //check arrays lengths
+    if (arr1.length !== arr2.length){
+        console.log("Lengths do not match");
+        return false;
+    } else {
+        console.log("Length match");
+    }   
+    //compare values
+    let valCompare = arr1.every((val, index) => val === arr2[index])
+    console.log(valCompare)
 }
 
 listCompare(listOne, listTwo);
