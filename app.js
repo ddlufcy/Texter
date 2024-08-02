@@ -66,10 +66,10 @@ resetJoinerBtn.addEventListener("click", () => {
     clearAllJoinerFields(joinedText)
 });
 
-//clear all input text fields
+//clear all input text fields and displayed h3 text
 function clearInputText(){
     const inputBoxes = document.querySelectorAll('.joinerInputBox')
-
+    joinedText.innerHTML = '';
     inputBoxes.forEach(inputBox => {
         inputBox.value = '';
     })
@@ -77,18 +77,13 @@ function clearInputText(){
 
 joinerTextRemove.addEventListener('click', clearInputText);
 
-// let joinerText = document.querySelectorAll('.joinerInputBox')
-//     joinerText.forEach(input => {
-//         input.addEventListener('keypress', () => {
-//             console.log("23123")
-//         })
-//     })
-
 //add to page button
 let showJoinerText = document.getElementById('joinerShowBtn');
 let joinedText = document.getElementById('joinedText');
 
 showJoinerText.addEventListener('click',addToMap)
+
+let delimitVal = document.getElementById('delimiterInput').value
 
 //where the text values get displayed
 const joinedStrings = new Map();
@@ -101,10 +96,12 @@ function addToMap() {
         joinedStrings.set(key, value);
         // console.log(inputBox.placeholder)
         // console.log(inputBox.value)
-        console.log(joinedStrings);
+        console.log(delimitVal);
+        console.log(value+delimitVal)
         let h3 = document.createElement('h3');
         h3.id = key;
-        h3.textContent = value;
+        h3.className = "joinedTextValue";
+        h3.textContent = value+delimitVal;
         joinedText.appendChild(h3);
     })
 };
@@ -129,6 +126,22 @@ function getListValues(list) {
     // console.log("1",listOne)
     // console.log("2",listTwo)
 }
+
+//simple string comparison
+
+const stringCheck = document.getElementById('stringCheck')
+
+stringCheck.addEventListener('click', (e) => {
+    let testInput1 = document.getElementById('testInput1').value
+    let testInput2 = document.getElementById('testInput2').value
+    if(testInput1 === testInput2){
+        simpleCompare.classList.toggle("rightSimpleCompare",true)
+        simpleCompare.classList.toggle("wrongSimpleCompare",false)
+    } else if (testInput1 !== testInput2) {
+        simpleCompare.classList.toggle("wrongSimpleCompare",true)
+        simpleCompare.classList.toggle("rightSimpleCompare",true)
+    }
+})
 
 //get first textarea values
 getListValues(list1Values)

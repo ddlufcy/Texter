@@ -22,7 +22,19 @@ body {
 
 #joinedText h3 {
     display: inline;
-    padding-left: 5pt;
+    /* padding-left: 5pt; */
+}
+
+#simpleCompare{
+     
+}
+
+.rightSimpleCompare {
+    background-color: rgb(21, 255, 0); 
+}
+
+.wrongSimpleCompare {
+    background-color: tomato;
 }
 
 .list-container{
