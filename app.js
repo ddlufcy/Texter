@@ -48,7 +48,7 @@ addNewInput.addEventListener("click", (e) => {
     const joinerInput = document.createElement('input')
     joinerInput.className= 'joinerInputBox';
     joinerInput.type = 'text';
-    joinerInput.placeholder = inputNumber[0];
+    joinerInput.placeholder = count;
     joinerOutput.appendChild(joinerInput);
 
 });
@@ -60,6 +60,7 @@ function clearAllJoinerFields(fields){
     }
 };
 
+//reset fields
 resetJoinerBtn.addEventListener("click", () => {
     //console.log(joinerOutput.childNodes)
     clearAllJoinerFields(joinerOutput)
@@ -67,9 +68,12 @@ resetJoinerBtn.addEventListener("click", () => {
 });
 
 //clear all input text fields and displayed h3 text
+let delimitVal = document.getElementById('delimiterInput').value
+
 function clearInputText(){
     const inputBoxes = document.querySelectorAll('.joinerInputBox')
     joinedText.innerHTML = '';
+    delimitVal.innerHTML = '';
     inputBoxes.forEach(inputBox => {
         inputBox.value = '';
     })
@@ -83,7 +87,6 @@ let joinedText = document.getElementById('joinedText');
 
 showJoinerText.addEventListener('click',addToMap)
 
-let delimitVal = document.getElementById('delimiterInput').value
 
 //where the text values get displayed
 const joinedStrings = new Map();
@@ -134,12 +137,15 @@ const stringCheck = document.getElementById('stringCheck')
 stringCheck.addEventListener('click', (e) => {
     let testInput1 = document.getElementById('testInput1').value
     let testInput2 = document.getElementById('testInput2').value
+    let h5 = document.getElementById('simpleOutput')
     if(testInput1 === testInput2){
         simpleCompare.classList.toggle("rightSimpleCompare",true)
         simpleCompare.classList.toggle("wrongSimpleCompare",false)
+        h5.textContent = "Match"
     } else if (testInput1 !== testInput2) {
         simpleCompare.classList.toggle("wrongSimpleCompare",true)
         simpleCompare.classList.toggle("rightSimpleCompare",true)
+        h5.textContent = "Negative"
     }
 })
 
@@ -157,13 +163,16 @@ function listCompare(first, second){
     //check arrays lengths
     if (arr1.length !== arr2.length){
         console.log("Lengths do not match");
-        return false;
     } else {
         console.log("Length match");
     }   
-    //compare values
+    //compare values and show values that are not in the other list
+    let arr1Wrong = arr1.filter(item => !arr2.includes(item));
+    let arr2Wrong = arr2.filter(item => !arr1.includes(item));
     let valCompare = arr1.every((val, index) => val === arr2[index])
-    console.log(valCompare)
+    // console.log(valCompare)
+    console.log("Only in 1st", arr1Wrong)
+    console.log("Only in 2nd", arr2Wrong)
 }
 
 listCompare(listOne, listTwo);

@@ -26,7 +26,17 @@ body {
 }
 
 #simpleCompare{
-     
+     padding: 1pt;
+     display: flex;
+}
+
+#simpleComapre button {
+    padding-inline: 1em;
+    margin-inline: 5pt;
+}
+
+#simpleCompare h5 {
+    padding-left: 10pt;
 }
 
 .rightSimpleCompare {
@@ -34,7 +44,7 @@ body {
 }
 
 .wrongSimpleCompare {
-    background-color: tomato;
+    background: tomato;
 }
 
 .list-container{
