@@ -39,6 +39,12 @@ body {
     padding-left: 10pt;
 }
 
+#simpleCompareBlank{
+    padding: 1pt;
+    display: flex;
+    background-color:transparent;
+}
+
 .rightSimpleCompare {
     background-color: rgb(21, 255, 0); 
 }
@@ -52,6 +58,10 @@ body {
     justify-content: space-between;
 }
 
+.list-container textarea{
+    box-sizing: border-box;
+}
+
 .list-container h4 {
-    display: contents;
+    display: inline;
 }

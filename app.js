@@ -146,6 +146,8 @@ stringCheck.addEventListener('click', (e) => {
         simpleCompare.classList.toggle("wrongSimpleCompare",true)
         simpleCompare.classList.toggle("rightSimpleCompare",true)
         h5.textContent = "Negative"
+    } else {
+        h5.textContent = ""
     }
 })
 
@@ -170,9 +172,9 @@ function listCompare(first, second){
     let arr1Wrong = arr1.filter(item => !arr2.includes(item));
     let arr2Wrong = arr2.filter(item => !arr1.includes(item));
     let valCompare = arr1.every((val, index) => val === arr2[index])
-    // console.log(valCompare)
-    console.log("Only in 1st", arr1Wrong)
-    console.log("Only in 2nd", arr2Wrong)
+    console.log(valCompare)
+    // console.log("Only in 1st", arr1Wrong)
+    // console.log("Only in 2nd", arr2Wrong)
 }
 
 listCompare(listOne, listTwo);
