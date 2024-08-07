@@ -68,12 +68,11 @@ resetJoinerBtn.addEventListener("click", () => {
 });
 
 //clear all input text fields and displayed h3 text
-let delimitVal = document.getElementById('delimiterInput').value
+
 
 function clearInputText(){
     const inputBoxes = document.querySelectorAll('.joinerInputBox')
     joinedText.innerHTML = '';
-    delimitVal.innerHTML = '';
     inputBoxes.forEach(inputBox => {
         inputBox.value = '';
     })
@@ -91,9 +90,13 @@ showJoinerText.addEventListener('click',addToMap)
 //where the text values get displayed
 const joinedStrings = new Map();
 
+
 function addToMap() {
+    clearAllJoinerFields(joinedText) //clear existing displayed text
     const inputBoxes = document.querySelectorAll('.joinerInputBox')
     inputBoxes.forEach(inputBox => {
+        //user selectable delimiter
+        let delimitVal = document.getElementById('delimiterInput').value
         let key = inputBox.placeholder;
         let value = inputBox.value;
         joinedStrings.set(key, value);
@@ -104,7 +107,7 @@ function addToMap() {
         let h3 = document.createElement('h3');
         h3.id = key;
         h3.className = "joinedTextValue";
-        h3.textContent = value+delimitVal;
+        h3.textContent = value.concat(delimitVal);
         joinedText.appendChild(h3);
     })
 };
